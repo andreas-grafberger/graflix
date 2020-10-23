@@ -1,0 +1,32 @@
+# docker-compose.override.yml
+version: "3.7"
+services:
+  app:
+    command: npm run dev
+    volumes:
+      - ./backend:/home/app/
+      - /home/app/node_modules
+    ports:
+      - 3000:3000
+
+  frontend:
+    build:
+      context: frontend
+      target: dev-stage
+    ports:
+      - 8800:8800
+    volumes:
+      - ./frontend/site:/app
+      - /app/node_modules/
+    command: "npm run serve"
+  
+  postgres:
+    volumes:
+      - dev_database_data:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
+      
+
+volumes:
+  dev_database_data: 
+    driver: local

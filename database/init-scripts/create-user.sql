@@ -1,0 +1,8 @@
+DO
+$do$
+BEGIN
+  IF NOT EXISTS (SELECT * FROM pg_user WHERE usename = 'me') 
+    THEN CREATE ROLE me SUPERUSER LOGIN;
+  END IF;
+END
+$do$;

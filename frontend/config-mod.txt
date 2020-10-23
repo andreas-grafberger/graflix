@@ -1,0 +1,7 @@
+ServerName localhost
+
+LoadModule proxy_module "modules/mod_proxy.so"
+LoadModule proxy_http_module "modules/mod_proxy_http.so"
+
+ProxyPass "/api"  "http://app:3000"
+ProxyPassReverse "/api"  "http://app:3000"

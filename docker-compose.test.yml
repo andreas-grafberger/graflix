@@ -1,0 +1,9 @@
+# docker-compose.override.yml
+version: "3.7"
+services:
+  frontend:
+    ports:
+      - "8899:80"
+  postgres:
+    volumes:
+      - /var/lib/postgresql/data/

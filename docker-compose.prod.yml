@@ -1,0 +1,17 @@
+# docker-compose.override.yml
+version: "3.7"
+services:
+  app:
+    restart: always
+  postgres:
+    restart: always
+    volumes:
+      - prod_database_data:/var/lib/postgresql/data/
+  frontend:
+    restart: always
+    ports:
+      - "80:80"
+
+volumes:
+  prod_database_data: 
+    driver: local
