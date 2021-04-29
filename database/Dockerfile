@@ -1,4 +1,4 @@
-FROM postgres:11.2-alpine
+FROM postgres:11-alpine
 
 RUN apk upgrade --update-cache --available && \
     apk add openssl && \
