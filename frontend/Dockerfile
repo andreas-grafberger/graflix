@@ -10,7 +10,7 @@ COPY ./site .
 FROM dev-stage AS build-stage
 RUN npm run build
 
-FROM httpd:alpine AS prod-stage
+FROM httpd:2-alpine AS prod-stage
 COPY . /usr/home/server-files
 RUN cat /usr/home/server-files/config-mod.txt >> /usr/local/apache2/conf/httpd.conf
 COPY --from=build-stage /app/dist /usr/local/apache2/htdocs/
