@@ -114,15 +114,16 @@ $modal-background-color: #121212;
 
 .no-poster {
   width: 100%;
-  height: 30vh;
+  height: 40vh;
   background-color: #a4508b;
   background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
   mask-image: linear-gradient(to top, rgba($modal-background-color, 0) 0%, rgba($modal-background-color, 1) 100%);
 }
 
 .header {
+  padding-bottom: 2rem;
   .main-info-container {
-    transform: translate(0rem, -10rem);
+    margin-top: -10rem;
     margin-left: 5rem;
     margin-right: 5rem;
 
@@ -140,7 +141,7 @@ $modal-background-color: #121212;
 
   img {
     width: 100%;
-    max-height: 60vh;
+    max-height: 40vh;
     object-fit: cover;
     mask-image: linear-gradient(to top, rgba($modal-background-color, 0) 0%, rgba($modal-background-color, 1) 100%);
   }
@@ -171,13 +172,13 @@ $modal-background-color: #121212;
 .modal {
   margin-top: 5vh;
   border: 1px solid $modal-background-color;
-  border-radius: 25px;
+  border-radius: 15px;
   position: fixed; /* Stay in place */
   z-index: 3; /* Sit on top */
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  min-width: 50vw; /* Full width */
+  max-width: 800px; /* Full width */
   max-height: 80vh;
   overflow: auto; /* Enable scroll if needed */
   background-color: $modal-background-color; /* Fallback color */
@@ -248,6 +249,25 @@ $modal-background-color: #121212;
   cursor: pointer;
   background: none;
   border: none;
+}
+
+@media only screen and (max-width: 540px) {
+  .modal {
+    max-width: 90vw; /* Full width */
+  }
+
+  .poster-container #play-icon {
+    width: 50px;
+    height: 50px;
+    margin-top: -25px;
+    margin-left: -25px;
+  }
+
+  .header .main-info-container {
+    margin-top: -5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
 }
 
 </style>
